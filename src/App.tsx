@@ -3,8 +3,6 @@ import {
   Github,
   Linkedin,
   Mail,
-  ExternalLink,
-  Calendar,
   MapPin,
   Download,
   ArrowUpRight,
@@ -214,13 +212,29 @@ const App = () => {
 
           {/* Social Links */}
           <div className="social-links">
-            <a href="#" className="social-link" aria-label="GitHub">
+            <a
+              href="https://github.com/yourusername"
+              className="social-link"
+              aria-label="GitHub"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Github className="social-icon" />
             </a>
-            <a href="#" className="social-link" aria-label="LinkedIn">
+            <a
+              href="https://www.linkedin.com/in/yourusername"
+              className="social-link"
+              aria-label="LinkedIn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Linkedin className="social-icon" />
             </a>
-            <a href="#" className="social-link" aria-label="Email">
+            <a
+              href="mailto:youremail@example.com"
+              className="social-link"
+              aria-label="Email"
+            >
               <Mail className="social-icon" />
             </a>
           </div>
@@ -376,7 +390,12 @@ const App = () => {
             </div>
 
             <div className="blog-footer">
-              <a href="#" className="view-all-link">
+              <a
+                href="https://yourblogurl.com"
+                className="view-all-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 View all posts
                 <ArrowUpRight className="view-all-arrow" />
               </a>
