@@ -1,3 +1,5 @@
+![License: All Rights Reserved](https://img.shields.io/badge/license-All%20Rights%20Reserved-red)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
