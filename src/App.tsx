@@ -272,8 +272,14 @@ const App = () => {
               </p>
 
               <button className="resume-button">
-                <Download className="resume-icon" />
-                <span>Download Resume</span>
+                <a
+                  href="/resume_burakdorman.pdf"
+                  download
+                  className="resume-link"
+                >
+                  <Download className="resume-icon" />
+                  <span>Download Resume</span>
+                </a>
               </button>
             </div>
           </div>
