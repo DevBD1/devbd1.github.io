@@ -1,0 +1,9 @@
+# Certificates and workshops. Each appears in the Life column at its issue date.
+#
+# Fields: id, name, provider, issued ('YYYY' or 'YYYY-MM'), url (optional)
+
+- id: btk-python-tensorflow
+  name: Python & TensorFlow for Data Science
+  provider: BTK Akademi
+  issued: "2024"
+  url: https://www.btkakademi.gov.tr/portal/profile/103126

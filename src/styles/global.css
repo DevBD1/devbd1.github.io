@@ -1,67 +1,89 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
-@theme {
-  --color-primary: var(--color-primary);
-  --color-secondary: var(--color-secondary);
-  --color-bg-base: var(--color-bg-base);
-  --color-text-base: var(--color-text-base);
-  --color-accent: var(--color-accent);
-}
+@custom-variant dark (&:is(.dark *));
 
+/* shadcn/ui tokens — the site is dark-only, so :root holds the dark palette. */
 :root {
-  --color-text-base: #e2e8f0; /* slate-200 */
+  --radius: 0.75rem;
+  --background: #0b0d12;
+  --foreground: #f1f3f6;
+  --card: #12151c;
+  --card-foreground: #f1f3f6;
+  --popover: #12151c;
+  --popover-foreground: #f1f3f6;
+  --primary: #f1f3f6;
+  --primary-foreground: #0b0d12;
+  --secondary: #1a1e27;
+  --secondary-foreground: #f1f3f6;
+  --muted: #1a1e27;
+  --muted-foreground: #9aa3b2;
+  --accent: #1a1e27;
+  --accent-foreground: #f1f3f6;
+  --destructive: #f87171;
+  --border: #262b36;
+  --input: #2a303c;
+  --ring: #7c93ff;
+  --grid-dot: #1a1f2b;
+  --rule: #1c212c;
 }
 
-/* 🦀 CRAB MODE (Default/Neutral) */
-:root[data-theme="crab"] {
-  --color-primary: #64748b; /* slate-500 */
-  --color-secondary: #94a3b8; /* slate-400 */
-  --color-bg-base: #0f172a; /* slate-900 */
-  --color-accent: rgba(100, 116, 139, 0.1);
-  /* Neutral gradient */
-  --bg-gradient: radial-gradient(circle at 50% 10%, #1e293b 0%, #0f172a 60%);
+/* Set tones. Pick one per set in src/data/sets.yaml. */
+.tone-neutral { --tone: #e6e8ec; --tone-fg: #f1f3f6; --tone-muted: #9aa3b2; --tone-soft: #12151c; --tone-line: #2a303c; }
+.tone-blue    { --tone: #7c93ff; --tone-fg: #b4c1ff; --tone-muted: #9aa8e8; --tone-soft: #11172e; --tone-line: #2e3a6b; }
+.tone-orange  { --tone: #ff8f57; --tone-fg: #ffb48e; --tone-muted: #d9a68a; --tone-soft: #22140d; --tone-line: #5a3420; }
+.tone-violet  { --tone: #b79cff; --tone-fg: #d4c6ff; --tone-muted: #c9b6ff; --tone-soft: #18132b; --tone-line: #3b3160; }
+.tone-green   { --tone: #4ade80; --tone-fg: #b7f0c8; --tone-muted: #86efac; --tone-soft: #0f2418; --tone-line: #1f6b3a; }
+.tone-teal    { --tone: #2dd4bf; --tone-fg: #99f6e4; --tone-muted: #5eead4; --tone-soft: #0b201d; --tone-line: #1d4a44; }
+.tone-pink    { --tone: #f472b6; --tone-fg: #fbcfe8; --tone-muted: #f9a8d4; --tone-soft: #2a1020; --tone-line: #5a2445; }
+
+@theme inline {
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-rule: var(--rule);
+
+  --color-tone: var(--tone);
+  --color-tone-fg: var(--tone-fg);
+  --color-tone-muted: var(--tone-muted);
+  --color-tone-soft: var(--tone-soft);
+  --color-tone-line: var(--tone-line);
 }
 
-/* 🚀 BULL MODE (Green/Growth - Intense) */
-:root[data-theme="bull"] {
-  --color-primary: #10b981; /* emerald-500 */
-  --color-secondary: #34d399; /* emerald-400 */
-  --color-bg-base: #020617; /* slate-950 (darker for contrast) */
-  --color-accent: rgba(16, 185, 129, 0.2);
-  /* Green upward glow */
-  --bg-gradient: radial-gradient(circle at 50% 120%, rgba(16, 185, 129, 0.15) 0%, #020617 70%);
-}
-
-/* 🐻 BEAR MODE (Red/Resilience - Intense) */
-:root[data-theme="bear"] {
-  --color-primary: #ef4444; /* red-500 */
-  --color-secondary: #f87171; /* red-400 */
-  --color-bg-base: #18181b; /* zinc-900 */
-  --color-accent: rgba(239, 68, 68, 0.2);
-  /* Red downward pressure (top gradient) */
-  --bg-gradient: radial-gradient(circle at 50% -20%, rgba(239, 68, 68, 0.15) 0%, #18181b 70%);
-}
-
-body {
-  background-color: var(--color-bg-base);
-  background-image: var(--bg-gradient);
-  background-attachment: fixed; /* Parallax feel */
-  color: var(--color-text-base);
-  transition: background-color 0.8s ease, color 0.5s ease, background-image 0.8s ease;
-  min-height: 100vh;
-}
-
-/* =============================================================================
- * Project card theme hover states
- *
- * Use theme CSS variables so the hover state always matches the active theme.
- * (Other sections already rely on --color-primary/--color-secondary.)
- * ============================================================================= */
-
-a.project-card:hover {
-  border-color: var(--color-primary) !important;
-}
-
-a.project-card:hover .project-card__title {
-  color: var(--color-secondary) !important;
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background-image: radial-gradient(var(--grid-dot) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
 }

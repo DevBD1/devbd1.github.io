@@ -1,0 +1,43 @@
+# The sets on the map.
+#
+# Exactly one set has `parent: null` — the universal set (U), i.e. you.
+# Sets whose parent is the universal set each get their own column on the
+# timeline, starting in the year they were `founded`. Deeper sets roll up into
+# their top-level ancestor's column.
+#
+# Fields
+#   id           unique, referenced by projects.yaml `set:`
+#   symbol       one or two letters used in set notation (U, K, W …)
+#   name, role, description
+#   parent       id of the containing set, or null for the universal set
+#   founded      'YYYY' or 'YYYY-MM' (required except for the universal set)
+#   url          optional
+#   tone         neutral | blue | orange | violet | green | teal | pink
+
+- id: devbd1
+  symbol: U
+  name: DevBD1
+  parent: null
+  role: Burak Dorman
+  description: Individual, hobby and open-source work.
+  url: https://github.com/DevBD1
+  tone: neutral
+
+- id: kukso
+  symbol: K
+  name: Kukso Studios
+  parent: devbd1
+  role: Sole founder
+  description: A one-person studio. Each product runs like its own startup.
+  founded: "2023"
+  url: https://kukso.com
+  tone: blue
+
+- id: wickdalgo
+  symbol: W
+  name: WickdAlgo
+  parent: devbd1
+  role: Solo founder
+  description: A standalone startup.
+  founded: "2026"
+  tone: orange

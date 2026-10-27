@@ -1,0 +1,41 @@
+# Work history. Entries whose `kind` is listed in site.yaml
+# (timeline.experienceKinds) appear in the Life column at their start date.
+# Founder roles are already told by the sets, so they're hidden by default.
+#
+# Fields
+#   id, kind (job | internship | freelance | founder | independent)
+#   company, position, location
+#   start        'YYYY' or 'YYYY-MM'
+#   end          'YYYY', 'YYYY-MM' or present
+#   summary      one line
+#   url, stack   optional
+#
+# Template — copy, uncomment, fill in:
+# - id: acme-intern
+#   kind: internship
+#   company: Acme
+#   position: Software Engineer Intern
+#   location: Istanbul, Türkiye
+#   start: "2024-07"
+#   end: "2024-09"
+#   summary: One line on what you shipped.
+#   url: https://acme.com
+
+- id: kukso-founder
+  kind: founder
+  company: Kukso Studios
+  position: Founder & Lead Developer
+  location: Remote
+  start: "2023"
+  end: present
+  summary: Founded a studio focused on multiplayer plugins and AI products.
+  url: https://kukso.com
+
+- id: algo-trader
+  kind: independent
+  company: Independent
+  position: Algorithmic Trader & Quant Developer
+  location: Remote
+  start: "2022"
+  end: present
+  summary: Designed and deployed algorithmic trading systems applying Smart Money Concepts.

@@ -1,0 +1,19 @@
+# Who you are. Used in the hero, header, footer and page title.
+name: Burak Dorman
+headline: Software Engineer
+tagline: Software engineer and solo founder. Everything I build lives inside this set, and every set has a history.
+location: Tuzla, Istanbul, Türkiye
+email: burakdorman@gmail.com
+# Link to your CV. Leave empty to hide the CV button.
+resume:
+
+links:
+  - label: GitHub
+    url: https://github.com/DevBD1
+  - label: LinkedIn
+    url: https://linkedin.com/in/burakdorman
+
+openToWork:
+  enabled: true
+  headline: Open to work
+  detail: Backend, AI/ML and quantitative development roles.

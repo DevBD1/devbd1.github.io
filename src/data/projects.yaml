@@ -1,0 +1,101 @@
+# The elements inside each set.
+#
+# Fields
+#   id           unique
+#   title
+#   summary      one line shown on the card
+#   set          id from sets.yaml (the universal set = "Only in U" column)
+#   started      'YYYY' or 'YYYY-MM'; places it on the timeline.
+#                Planned projects may leave it out: they show in the current year.
+#   status       live | beta | building | planned | paused | archived
+#   statusNote   optional, replaces the status label (e.g. TestFlight)
+#   kind         short label: Web, iOS, Open source, Research …
+#   stack        optional list
+#   links        optional: site, store, repo — the card opens the first one present
+
+- id: relay-layer
+  title: Relay Layer
+  summary: Multi-agent orchestration with a shared task database and dashboard.
+  set: devbd1
+  started: "2026-02"
+  status: live
+  kind: Open source
+  stack: [Node.js, SQLite, PM2, React, Tailwind]
+  links:
+    site: https://relay.kukso.com
+    repo: https://github.com/DevBD1/relay-layer
+
+- id: wickdbot
+  title: WickdBot
+  summary: Crypto trading bot built on Smart Money Concepts, with risk management.
+  set: devbd1
+  started: "2025-11"
+  status: live
+  kind: Open source
+  stack: [Python, Binance API, Pandas, Docker]
+  links:
+    repo: https://github.com/DevBD1/wickdbot
+
+- id: graphsna
+  title: GraphSNA
+  summary: Social network analysis with graph theory and centrality metrics.
+  set: devbd1
+  started: "2024-05"
+  status: archived
+  kind: Research
+  stack: [Python, NetworkX, Matplotlib, Flask]
+  links:
+    repo: https://github.com/DevBD1/graphSNA
+
+- id: cognitive-fire
+  title: CognitiveFire
+  summary: 3D puzzle game built in Unity as a capstone project.
+  set: devbd1
+  started: "2023-06"
+  status: archived
+  kind: Game
+  stack: [Unity, C#, Blender]
+  links:
+    repo: https://github.com/DevBD1/CognitiveFire
+
+- id: minecraft-plugins
+  title: Minecraft plugins
+  summary: Plugins for multiplayer servers.
+  set: kukso
+  started: "2023-12"
+  status: live
+  kind: Java
+
+- id: firstspawn
+  title: FirstSpawn
+  summary: Server discovery with live player counts and analytics.
+  set: kukso
+  started: "2024-08"
+  status: building
+  kind: Web
+  stack: [Next.js, PostgreSQL, Redis]
+
+- id: gyrolog
+  title: Gyrolog
+  summary: Stay on course. Turns daily thoughts and goals into a sense of direction.
+  set: kukso
+  started: "2026-06"
+  status: beta
+  statusNote: TestFlight
+  kind: iOS
+
+- id: minecraft-server
+  title: Minecraft server
+  summary: A server of my own, built on the studio's plugins.
+  set: kukso
+  status: planned
+  kind: Game server
+
+- id: wickdalgo
+  title: WickdAlgo
+  summary: Detects Smart Money Concepts structures (swings, BOS, CHoCH) in crypto and forex data.
+  set: wickdalgo
+  started: "2026"
+  status: building
+  statusNote: Launching
+  kind: Trading tools
