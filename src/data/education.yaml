@@ -11,6 +11,14 @@
   start: "2022"
   end: present
 
+- id: marmara-cp
+  institution: Marmara University
+  field: Computer Programming
+  degree: Associate Degree
+  location: Istanbul, Türkiye
+  start: "2022"
+  end: "2024"
+
 - id: itu-marine
   institution: Istanbul Technical University
   field: Marine Engineering

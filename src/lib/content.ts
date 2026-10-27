@@ -118,6 +118,8 @@ const certificateSchema = z.object({
   provider: text,
   issued: yearMonth,
   url: url.optional(),
+  credentialId: z.string().optional(),
+  skills: z.array(z.string()).default([]),
 });
 
 const skillGroupSchema = z.object({ group: text, items: z.array(text) });
