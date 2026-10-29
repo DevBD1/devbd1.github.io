@@ -6,6 +6,7 @@
 #   summary      one line shown on the card
 #   set          id from sets.yaml (the universal set = "Only in U" column)
 #   started      'YYYY' or 'YYYY-MM'; places it on the timeline.
+#                May mark the initial idea; later milestones are noted in comments.
 #                Planned projects may leave it out: they show in the current year.
 #   status       live | beta | building | planned | paused | archived
 #   statusNote   optional, replaces the status label (e.g. TestFlight)
@@ -13,89 +14,101 @@
 #   stack        optional list
 #   links        optional: site, store, repo — the card opens the first one present
 
-- id: relay-layer
-  title: Relay Layer
-  summary: Multi-agent orchestration with a shared task database and dashboard.
-  set: devbd1
-  started: "2026-02"
-  status: live
-  kind: Open source
-  stack: [Node.js, SQLite, PM2, React, Tailwind]
-  links:
-    site: https://relay.kukso.com
-    repo: https://github.com/DevBD1/relay-layer
-
-- id: wickdbot
-  title: WickdBot
-  summary: Crypto trading bot built on Smart Money Concepts, with risk management.
-  set: devbd1
-  started: "2025-11"
-  status: live
-  kind: Open source
-  stack: [Python, Binance API, Pandas, Docker]
-  links:
-    repo: https://github.com/DevBD1/wickdbot
-
 - id: graphsna
   title: GraphSNA
-  summary: Social network analysis with graph theory and centrality metrics.
+  summary: >-
+    A C# Windows desktop course project for visualizing and analyzing directed,
+    weighted social network graphs. Explored data structures, BFS and DFS
+    traversal, Dijkstra's and A* pathfinding, and Welsh–Powell graph coloring.
   set: devbd1
-  started: "2024-05"
+  started: "2025-11"
   status: archived
-  kind: Research
-  stack: [Python, NetworkX, Matplotlib, Flask]
+  kind: Desktop
+  stack: [C#]
   links:
     repo: https://github.com/DevBD1/graphSNA
 
 - id: cognitive-fire
   title: CognitiveFire
-  summary: 3D puzzle game built in Unity as a capstone project.
+  summary: A 3D shooter built in Unity as a team course project. Contributed to level design, model placement, gameplay scripting, and in-game AI.
   set: devbd1
-  started: "2023-06"
+  started: "2025-09"
   status: archived
   kind: Game
-  stack: [Unity, C#, Blender]
+  stack: [Unity, C#]
   links:
     repo: https://github.com/DevBD1/CognitiveFire
 
+- id: routiner
+  title: Routiner
+  summary: An AI proof of concept that turned spoken accounts of the day into structured journal entries to reduce logging friction in habit tracking.
+  set: devbd1
+  started: "2025-04"
+  status: archived
+  kind: iOS
+  stack: [React Native]
+  links:
+    repo: https://github.com/DevBD1/routiner
+
 - id: minecraft-plugins
-  title: Minecraft plugins
-  summary: Plugins for multiplayer servers.
+  title: Kukso Plugins
+  summary: >-
+    Lightweight Minecraft plugins offering core server systems and specialized
+    features, available on SpigotMC. Developed independently before being
+    brought together under Kukso.
   set: kukso
-  started: "2023-12"
+  started: "2025-06"
   status: live
-  kind: Java
+  kind: Plugins
+  stack: [Java]
+  links:
+    site: https://www.spigotmc.org/resources/authors/394490/
 
 - id: firstspawn
   title: FirstSpawn
-  summary: Server discovery with live player counts and analytics.
+  summary: >-
+    A Minecraft discovery platform designed to match players with suitable
+    servers and help new servers reach the right audience. In early development;
+    not yet in testing or publicly available.
   set: kukso
-  started: "2024-08"
+  # Initial idea date; development is ongoing and testing has not begun.
+  started: "2026-01"
   status: building
   kind: Web
   stack: [Next.js, PostgreSQL, Redis]
+  links:
+    site: https://firstspawn.com
 
 - id: gyrolog
   title: Gyrolog
-  summary: Stay on course. Turns daily thoughts and goals into a sense of direction.
+  summary: >-
+    Gyrolog is a personal operating system that helps you understand what pulls
+    you away from your goals and find your way back. Capture thoughts,
+    experiences, and ideas naturally by voice or text; Gyrolog helps organize
+    them into a journal or collections. Over time, it connects your intentions
+    with what actually happened, surfaces patterns grounded in your own records,
+    and helps you reflect on what to adjust—so you can spend more time on what
+    matters to you.
   set: kukso
+  # Initial idea: 2026-06. Development began: 2026-07. TestFlight beta began: 2026-08.
   started: "2026-06"
   status: beta
   statusNote: TestFlight
   kind: iOS
-
-- id: minecraft-server
-  title: Minecraft server
-  summary: A server of my own, built on the studio's plugins.
-  set: kukso
-  status: planned
-  kind: Game server
+  stack: [React Native]
+  links:
+    site: https://gyrolog.app
 
 - id: wickdalgo
   title: WickdAlgo
-  summary: Detects Smart Money Concepts structures (swings, BOS, CHoCH) in crypto and forex data.
+  summary: >-
+    A trading software suite for turning market structure ideas into
+    reproducible, auditable research and testable strategies. Built for traders
+    who understand financial markets and want to automate their strategies.
   set: wickdalgo
-  started: "2026"
+  started: "2026-01"
   status: building
-  statusNote: Launching
-  kind: Trading tools
+  statusNote: Private development
+  kind: Web
+  links:
+    site: https://wickd.kukso.com

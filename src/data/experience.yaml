@@ -21,21 +21,80 @@
 #   summary: One line on what you shipped.
 #   url: https://acme.com
 
+- id: internship-2
+  kind: internship
+  company: Oklidis Advanced Engineering
+  position: Software Engineer Intern
+  location: Istanbul, Türkiye
+  start: "2026-07"
+  end: "2026-09"
+  summary: >-
+    Contributed to renewable energy management systems (EMS), working with
+    inverter register maps, the mobile app, and Modbus communications.
+  stack: [TypeScript, React Native, ThingsBoard, Node-RED, C++, Modbus]
+  url: https://oklidis.com.tr
+
 - id: kukso-founder
   kind: founder
   company: Kukso Studios
   position: Founder & Lead Developer
   location: Remote
-  start: "2023"
+  start: "2025-12"
   end: present
-  summary: Founded a studio focused on multiplayer plugins and AI products.
+  summary: Founded and run a one-person studio building Minecraft plugins, web products, and mobile apps.
   url: https://kukso.com
 
-- id: algo-trader
+- id: market-trader
   kind: independent
   company: Independent
-  position: Algorithmic Trader & Quant Developer
+  position: Independent Trader
   location: Remote
   start: "2022"
   end: present
-  summary: Designed and deployed algorithmic trading systems applying Smart Money Concepts.
+  summary: >-
+    Have traded manually with personal capital since 2022. Began algorithmic trading
+    research through WickdAlgo in early 2026, with no live algorithmic trading.
+
+- id: internship-1
+  kind: internship
+  company: Trender Software
+  position: Game Developer Intern
+  location: Remote
+  start: "2023-07"
+  end: "2023-08"
+  summary: Contributed to in-game AI for a soulslike game using Unreal Engine and C++ at a Web3 gaming company.
+  stack: [Unreal Engine, C++]
+
+- id: cm-2
+  kind: job
+  company: Trender Software
+  position: Community Manager
+  location: Remote
+  start: "2022-09"
+  end: "2024-09"
+  summary: >-
+    Managed Discord and Telegram communities and scheduled four moderators in
+    six-hour shifts for 24/7 coverage. Worked with development, strategy, and
+    social media teams, addressing community concerns through support channels
+    and direct messages. Kept community operations running during crises and
+    traffic surges, reducing pressure on other teams.
+
+- id: cm-1
+  kind: job
+  company: Bright Union
+  position: Community Manager
+  location: Remote
+  start: "2021-08"
+  end: "2022-08"
+  summary: >-
+    Managed Discord and Telegram communities for a DeFi insurance aggregator
+    that compared coverage and quotes across providers. Moderated discussions
+    and addressed community concerns.
+
+- id: minecraft-freelance
+  kind: freelance
+  company: Self-employed
+  position: Freelance Minecraft Plugin Developer
+  start: "2018"
+  end: "2025"
+  summary: Developed custom Minecraft plugins on commission to meet individual clients' requirements.

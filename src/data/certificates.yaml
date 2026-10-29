@@ -3,19 +3,10 @@
 # Fields: id, name, provider, issued ('YYYY' or 'YYYY-MM'),
 #         url, credentialId, skills (optional; skills are kept for the record, not shown)
 
-- id: btk-python-tensorflow
-  name: Veri Bilimi için Python ve TensorFlow
-  provider: BTK Akademi
-  issued: "2026"
-  credentialId: "103126"
-  url: https://www.btkakademi.gov.tr/portal/profile/103126
-  skills: [Python, OOP, NumPy, Pandas, Matplotlib, TensorFlow, Data Science]
-
 - id: btk-python-yapay-zeka
   name: Yapay Zeka ve Üretken Modeller Atölyesi
   provider: BTK Akademi
-  issued: "2026"
-  credentialId: "103126"
+  issued: "2026-04"
   url: https://www.btkakademi.gov.tr/portal/profile/103126
   skills:
     - Python
@@ -33,3 +24,10 @@
     - Model Evaluation
     - Model Deployment
     - Responsible AI
+
+- id: btk-python-tensorflow
+  name: Veri Bilimi için Python ve TensorFlow
+  provider: BTK Akademi
+  issued: "2026-02"
+  url: https://www.btkakademi.gov.tr/portal/profile/103126
+  skills: [Python, OOP, NumPy, Pandas, Matplotlib, TensorFlow, Data Science]

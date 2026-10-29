@@ -15,10 +15,10 @@
 #   tone         neutral | blue | orange | violet | green | teal | pink
 
 - id: devbd1
-  symbol: U
+  symbol: D
   name: DevBD1
   parent: null
-  role: Burak Dorman
+  role: M. Burak Dorman
   description: Individual, hobby and open-source work.
   url: https://github.com/DevBD1
   tone: neutral
@@ -27,17 +27,17 @@
   symbol: K
   name: Kukso Studios
   parent: devbd1
-  role: Sole founder
-  description: A one-person studio. Each product runs like its own startup.
-  founded: "2023"
+  role: Solo founder
+  description: A one-person studio building Minecraft plugins, web products, and mobile apps.
+  founded: "2025-12"
   url: https://kukso.com
-  tone: blue
+  tone: violet
 
 - id: wickdalgo
   symbol: W
   name: WickdAlgo
   parent: devbd1
   role: Solo founder
-  description: A standalone startup.
+  description: Trading software for reproducible market structure research and testable strategies.
   founded: "2026"
   tone: orange
