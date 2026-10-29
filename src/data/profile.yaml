@@ -1,12 +1,9 @@
-# Who you are. Used in the hero, header, footer and page title.
+# Who you are. Used on the map and the résumé.
 name: M. Burak Dorman
 headline: Software Engineer
 tagline: Software developer building independent products across web, mobile, and games.
 location: Istanbul, Türkiye
 email: burakdorman@proton.me
-# Link to your CV. Leave empty to hide the CV button.
-resume:
-
 links:
   - label: GitHub
     url: https://github.com/DevBD1

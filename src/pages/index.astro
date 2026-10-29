@@ -12,10 +12,13 @@ import { buildStrata } from '@/lib/timeline';
 const strata = buildStrata();
 const showToolbox = site.sections.toolbox && skills.length > 0;
 
+const resumeHref = `${import.meta.env.BASE_URL}resume/`;
+
 const nav = [
   { label: 'Map', href: '#map' },
   ...(showToolbox ? [{ label: 'Toolbox', href: '#toolbox' }] : []),
   { label: 'Contact', href: '#contact' },
+  { label: 'Resume', href: resumeHref },
 ];
 ---
 
@@ -30,7 +33,7 @@ const nav = [
       <span class="absolute -top-3 left-6 bg-background px-2.5 font-mono text-sm font-semibold lg:left-12">
         {rootSet.symbol} = {rootSet.name}
       </span>
-      <Hero profile={profile} root={rootSet} topSets={strata.topSets} readingNote={site.timeline.readingNote} />
+      <Hero profile={profile} root={rootSet} topSets={strata.topSets} readingNote={site.timeline.readingNote} resumeHref={resumeHref} />
       <StrataGrid strata={strata} />
       <StrataList strata={strata} root={rootSet} />
     </section>

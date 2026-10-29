@@ -1,13 +1,15 @@
 # Site-wide settings.
-title: DevBD1 — Portfolio
-description: Software developer building independent products across web, mobile, and games.
+title: M. Burak Dorman — Software Engineer
+description: Software engineer building products across web, mobile, games and IoT. Open to backend, web, mobile, embedded and IoT roles.
 url: https://devbd1.github.io
 lang: en
 
+# The map (home page).
 timeline:
   # true: only years that have something in them get a row.
   hideEmptyYears: false
   # Which experience kinds appear in the Life column (job, internship, freelance, founder, independent).
+  # Founder roles are already told by the sets, so they're left out here.
   experienceKinds: [job, internship, freelance]
   lifeColumn:
     title: Career
@@ -19,3 +21,8 @@ timeline:
 
 sections:
   toolbox: true
+
+# The résumé page (/resume/ and resume.pdf).
+resume:
+  # Which experience kinds appear under Experience.
+  experienceKinds: [job, internship, freelance, founder]

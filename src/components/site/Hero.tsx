@@ -7,6 +7,7 @@ interface HeroProps {
   root: SetDef;
   topSets: SetDef[];
   readingNote: string;
+  resumeHref: string;
 }
 
 /** Set-notation chips: K ⊂ U for each set, plus K ∩ W = ∅ for each pair (up to three pairs). */
@@ -23,7 +24,7 @@ function notation(root: SetDef, topSets: SetDef[]) {
   return pairs.length <= 3 ? [...chips, ...pairs] : chips;
 }
 
-export function Hero({ profile, root, topSets, readingNote }: HeroProps) {
+export function Hero({ profile, root, topSets, readingNote, resumeHref }: HeroProps) {
   return (
     <div className="flex flex-wrap items-end justify-between gap-8">
       <div className="flex max-w-2xl flex-col gap-4">
@@ -33,15 +34,11 @@ export function Hero({ profile, root, topSets, readingNote }: HeroProps) {
         <p className="text-lg leading-relaxed text-[#c4c9d2] sm:text-xl">{profile.tagline}</p>
         <div className="flex flex-wrap gap-2.5 pt-1">
           <Button asChild size="lg" className="h-11">
+            <a href={resumeHref}>Open the Resume</a>
+          </Button>
+          <Button asChild size="lg" variant="outline" className="h-11">
             <a href={`mailto:${profile.email}`}>Email me</a>
           </Button>
-          {profile.resume && (
-            <Button asChild size="lg" variant="outline" className="h-11">
-              <a href={profile.resume} target="_blank" rel="noopener noreferrer">
-                CV
-              </a>
-            </Button>
-          )}
           {profile.links.map((l) => (
             <Button key={l.url} asChild size="lg" variant="outline" className="h-11">
               <a href={l.url} target="_blank" rel="noopener noreferrer">

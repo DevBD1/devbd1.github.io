@@ -1,13 +1,12 @@
-# Work history. Entries whose `kind` is listed in site.yaml
-# (timeline.experienceKinds) appear in the Life column at their start date.
-# Founder roles are already told by the sets, so they're hidden by default.
+# Work history. Map: Life column; résumé: Experience, newest first. Only the kinds listed in
+# site.yaml (timeline.experienceKinds, resume.experienceKinds) are shown.
 #
 # Fields
 #   id, kind (job | internship | freelance | founder | independent)
 #   company, position, location
 #   start        'YYYY' or 'YYYY-MM'
 #   end          'YYYY', 'YYYY-MM' or present
-#   summary      one line
+#   summary      one or two sentences
 #   url, stack   optional
 #
 # Template — copy, uncomment, fill in:
@@ -41,7 +40,7 @@
   location: Remote
   start: "2025-12"
   end: present
-  summary: Founded and run a one-person studio building Minecraft plugins, web products, and mobile apps.
+  summary: Run a one-person studio building Minecraft plugins, web products, and mobile apps.
   url: https://kukso.com
 
 - id: market-trader
@@ -73,11 +72,9 @@
   start: "2022-09"
   end: "2024-09"
   summary: >-
-    Managed Discord and Telegram communities and scheduled four moderators in
-    six-hour shifts for 24/7 coverage. Worked with development, strategy, and
-    social media teams, addressing community concerns through support channels
-    and direct messages. Kept community operations running during crises and
-    traffic surges, reducing pressure on other teams.
+    Managed Discord and Telegram communities with 24/7 coverage, scheduling four
+    moderators in six-hour shifts. Worked with development, strategy, and social
+    media teams to resolve community concerns, including during crises and traffic surges.
 
 - id: cm-1
   kind: job
@@ -87,9 +84,8 @@
   start: "2021-08"
   end: "2022-08"
   summary: >-
-    Managed Discord and Telegram communities for a DeFi insurance aggregator
-    that compared coverage and quotes across providers. Moderated discussions
-    and addressed community concerns.
+    Managed Discord and Telegram communities for a DeFi insurance aggregator,
+    moderating discussions and addressing community concerns.
 
 - id: minecraft-freelance
   kind: freelance
@@ -98,3 +94,4 @@
   start: "2018"
   end: "2025"
   summary: Developed custom Minecraft plugins on commission to meet individual clients' requirements.
+  stack: [Java]

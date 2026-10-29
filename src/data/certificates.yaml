@@ -1,4 +1,4 @@
-# Certificates and workshops. Each appears in the Life column at its issue date.
+# Certificates and workshops. Map: Life column at the issue date. Résumé: newest first.
 #
 # Fields: id, name, provider, issued ('YYYY' or 'YYYY-MM'),
 #         url, credentialId, skills (optional; skills are kept for the record, not shown)

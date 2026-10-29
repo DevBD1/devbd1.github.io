@@ -47,6 +47,11 @@ const siteSchema = z.object({
     readingNote: z.string().default(''),
   }),
   sections: z.object({ toolbox: z.boolean().default(true) }).default({}),
+  resume: z
+    .object({
+      experienceKinds: z.array(z.enum(experienceKinds)).default(['job', 'internship', 'freelance', 'founder']),
+    })
+    .default({}),
 });
 
 const profileSchema = z.object({
@@ -55,7 +60,6 @@ const profileSchema = z.object({
   tagline: text,
   location: z.string().default(''),
   email: z.string().email(),
-  resume: url.nullish(),
   links: z.array(z.object({ label: text, url })).default([]),
   openToWork: z
     .object({ enabled: z.boolean(), headline: text, detail: z.string().default('') })
@@ -207,4 +211,33 @@ for (const p of projects) {
   if (!p.started && p.status !== 'planned') {
     throw new Error(`src/data/projects.yaml: "${p.id}" needs a "started" date (only planned projects may omit it)`);
   }
+}
+
+/* ---------- dates ---------- */
+
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+function formatDate(value: string) {
+  if (value === 'present') return 'Present';
+  const [y, m] = value.split('-');
+  return m ? `${MONTHS[Number(m) - 1]} ${y}` : y;
+}
+
+/** "Jul 2026 – Sep 2026", or a single date when start and end match. */
+export function dateRange(start: string, end?: string) {
+  const a = formatDate(start);
+  const b = end ? formatDate(end) : a;
+  return a === b ? a : `${a} – ${b}`;
+}
+
+/** Sortable number for a date; 'present' is the latest. */
+function sortKey(value: string) {
+  if (value === 'present') return Number.MAX_SAFE_INTEGER;
+  const [y, m] = value.split('-');
+  return Number(y) * 12 + Number(m ?? 0);
+}
+
+/** Newest first: by start date, then by end date. */
+export function newestFirst<T>(items: T[], start: (t: T) => string, end: (t: T) => string = start) {
+  return [...items].sort((a, b) => sortKey(start(b)) - sortKey(start(a)) || sortKey(end(b)) - sortKey(end(a)));
 }
