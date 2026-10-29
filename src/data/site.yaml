@@ -1,0 +1,21 @@
+# Site-wide settings.
+title: DevBD1 — Portfolio
+description: Software developer building independent products across web, mobile, and games.
+url: https://devbd1.github.io
+lang: en
+
+timeline:
+  # true: only years that have something in them get a row.
+  hideEmptyYears: false
+  # Which experience kinds appear in the Life column (job, internship, freelance, founder, independent).
+  experienceKinds: [job, internship, freelance]
+  lifeColumn:
+    title: Career
+    subtitle: education & work
+  rootColumn:
+    title: Individual
+    subtitle: open source & personal
+  readingNote: Read top-down, from now into the past. Each set's column begins the year it was founded.
+
+sections:
+  toolbox: true

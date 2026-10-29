@@ -1,0 +1,28 @@
+# Education. Each entry appears in the Life column at its start date.
+#
+# Fields: id, institution, field, degree, location,
+#         start ('YYYY' or 'YYYY-MM'), end ('YYYY', 'YYYY-MM' or present)
+
+- id: kocaeli-ise
+  institution: Kocaeli University
+  field: Information Systems Engineering
+  degree: Bachelor of Engineering (in progress)
+  location: Kocaeli, Türkiye
+  start: "2024"
+  end: present
+
+- id: marmara-cp
+  institution: Marmara University
+  field: Computer Programming
+  degree: Associate Degree
+  location: Istanbul, Türkiye
+  start: "2022"
+  end: "2024"
+
+- id: itu-marine
+  institution: Istanbul Technical University
+  field: Marine Engineering
+  degree: Undergraduate studies (not completed)
+  location: Istanbul, Türkiye
+  start: "2018"
+  end: "2020"
