@@ -1,20 +1,22 @@
 # src/data — the site's content
 
-Every word on the site comes from the YAML files in this folder. Edit them and
-push: the page rebuilds itself. No code changes needed.
+Every word on the site comes from the YAML files in this folder. Both layouts,
+the map (`/`) and the résumé (`/resume/` and its PDF), read the same files. Edit
+them and push: the site rebuilds itself. No code changes needed.
 
 | File | What it drives |
 | --- | --- |
-| `site.yaml` | Page title, description, URL, timeline options, which sections show |
-| `profile.yaml` | Name, tagline, email, CV link, social links, "Open to work" |
-| `sets.yaml` | The sets: U (you), and each company or banner inside it. Each top-level set gets a column that starts the year it was founded |
-| `projects.yaml` | Everything you build. `set:` puts it in a column; `started:` puts it in a year |
-| `experience.yaml` | Jobs and internships → the Life column |
-| `education.yaml` | Schools → the Life column |
-| `certificates.yaml` | Certificates and workshops → the Life column |
-| `skills.yaml` | The Toolbox section |
+| `site.yaml` | Page title, description, URL, map options, which experience kinds each layout shows |
+| `profile.yaml` | Name, headline, tagline, email, profile links, "Open to work" |
+| `sets.yaml` | Map: the sets (U and each company inside it); each top-level set gets a column. Résumé: a project's set is shown as the org it was built under |
+| `projects.yaml` | Map: placed by `set` and `started`. Résumé: listed in file order |
+| `experience.yaml` | Map: Life column. Résumé: Experience (newest first) |
+| `education.yaml` | Map: Life column. Résumé: Education (newest first) |
+| `certificates.yaml` | Map: Life column. Résumé: Certificates (newest first) |
+| `skills.yaml` | Map: Toolbox. Résumé: Skills |
 
-Each file starts with a comment that lists its fields.
+Each file starts with a comment that lists its fields. A section with no
+entries is hidden.
 
 ## Rules of thumb
 
@@ -23,9 +25,9 @@ Each file starts with a comment that lists its fields.
 - Exactly one set has `parent: null`: the universal set (U).
 - Add a company: add a set with `parent: devbd1`, a `founded` date and a `tone`. It gets its own column automatically.
 - Tones: `neutral`, `blue`, `orange`, `violet`, `green`, `teal`, `pink`.
-- A planned project can skip `started`; it shows in the current year with a dashed outline.
-- Years with nothing in them are hidden (`site.yaml → timeline.hideEmptyYears`).
-- "As of" is the build date, so each deploy refreshes it.
+- A planned project can skip `started`; on the map it shows in the current year with a dashed outline.
+- Empty years on the map can be hidden (`site.yaml → timeline.hideEmptyYears`).
+- The map's "as of" date is the build date, so each deploy refreshes it.
 
 ## When something is wrong
 
@@ -34,5 +36,5 @@ file, the entry and the field, for example:
 
 ```
 src/data/projects.yaml has problems:
-  • entry 2 (id: wickdbot) → started: use 'YYYY' or 'YYYY-MM' (in quotes)
+  • entry 2 (id: gyrolog) → started: use 'YYYY' or 'YYYY-MM' (in quotes)
 ```

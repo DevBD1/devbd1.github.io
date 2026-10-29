@@ -26,6 +26,29 @@
   --ring: #7c93ff;
   --grid-dot: #1a1f2b;
   --rule: #1c212c;
+  --available: #4ade80;
+}
+
+/* Light "paper" theme for the résumé page (screen and PDF). */
+.theme-paper {
+  color-scheme: light;
+  --background: #ffffff;
+  --foreground: #14171c;
+  --card: #ffffff;
+  --card-foreground: #14171c;
+  --primary: #14171c;
+  --primary-foreground: #ffffff;
+  --secondary: #f2f3f5;
+  --secondary-foreground: #14171c;
+  --muted: #f2f3f5;
+  --muted-foreground: #5c6370;
+  --accent: #f2f3f5;
+  --accent-foreground: #14171c;
+  --border: #dfe2e7;
+  --input: #dfe2e7;
+  --ring: #4f6bed;
+  --grid-dot: transparent;
+  --available: #16a34a;
 }
 
 /* Set tones. Pick one per set in src/data/sets.yaml. */
@@ -71,6 +94,7 @@
   --color-tone-muted: var(--tone-muted);
   --color-tone-soft: var(--tone-soft);
   --color-tone-line: var(--tone-line);
+  --color-available: var(--available);
 }
 
 @layer base {
@@ -85,5 +109,22 @@
     @apply bg-background text-foreground font-sans antialiased;
     background-image: radial-gradient(var(--grid-dot) 1px, transparent 1px);
     background-size: 24px 24px;
+  }
+}
+
+@page {
+  size: A4;
+  margin: 14mm 16mm;
+}
+
+@media print {
+  html {
+    font-size: 11.5px;
+  }
+  article {
+    break-inside: avoid;
+  }
+  h2 {
+    break-after: avoid;
   }
 }

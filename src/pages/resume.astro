@@ -1,0 +1,142 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { ResumeHeader } from '@/components/site/ResumeHeader';
+import { Item, Section } from '@/components/site/Section';
+import {
+  certificates,
+  dateRange,
+  education,
+  experience,
+  newestFirst,
+  profile,
+  projects,
+  rootSet,
+  sets,
+  site,
+  skills,
+  type ProjectStatus,
+} from '@/lib/content';
+
+const jobs = newestFirst(
+  experience.filter((x) => site.resume.experienceKinds.includes(x.kind)),
+  (x) => x.start,
+  (x) => x.end,
+);
+const schools = newestFirst(education, (e) => e.start, (e) => e.end);
+const certs = newestFirst(certificates, (c) => c.issued);
+
+const statusLabels: Record<ProjectStatus, string | null> = {
+  live: 'Live',
+  beta: 'Beta',
+  building: 'In development',
+  planned: 'Planned',
+  paused: 'Paused',
+  archived: null,
+};
+const projectStatus = (p: (typeof projects)[number]) => p.statusNote ?? statusLabels[p.status];
+
+/** The set a project was built under, unless it's the universal set or just the project's own name. */
+const setName = new Map(sets.map((s) => [s.id, s.name]));
+const projectOrg = (p: (typeof projects)[number]) => {
+  const name = p.set === rootSet.id ? undefined : setName.get(p.set);
+  return name === p.title ? undefined : name;
+};
+
+const base = import.meta.env.BASE_URL;
+const pdfName = `${profile.name.replace(/[^\p{L}\p{N}]+/gu, '-').replace(/^-|-$/g, '')}-Resume.pdf`;
+---
+
+<Layout title={`${profile.name} — Resume`} theme="paper">
+  <nav aria-label="Resume" class="mx-auto flex max-w-3xl items-center justify-between gap-4 px-4 pt-6 text-[0.9375rem] sm:px-6 print:hidden">
+    <a href={base} class="text-muted-foreground underline-offset-4 hover:text-foreground hover:underline">← Back to the map</a>
+    <a
+      href={`${base}resume.pdf`}
+      download={pdfName}
+      class="inline-flex h-10 items-center rounded-lg bg-primary px-4 font-medium text-primary-foreground transition-opacity hover:opacity-90"
+    >
+      Download PDF
+    </a>
+  </nav>
+  <main class="mx-auto flex max-w-3xl flex-col gap-12 px-4 py-12 sm:px-6 sm:py-16 print:max-w-none print:gap-5 print:p-0">
+    <ResumeHeader profile={profile} />
+
+    {
+      jobs.length > 0 && (
+        <Section id="experience" title="Experience">
+          {jobs.map((x) => (
+            <Item
+              title={x.position}
+              subtitle={x.company}
+              subtitleHref={x.url}
+              meta={x.location ? [x.location] : []}
+              date={dateRange(x.start, x.end)}
+              summary={x.summary}
+              stack={x.stack}
+            />
+          ))}
+        </Section>
+      )
+    }
+
+    {
+      projects.length > 0 && (
+        <Section id="projects" title="Projects">
+          {projects.map((p) => (
+            <Item
+              title={p.title}
+              titleHref={p.links.site ?? p.links.store ?? p.links.repo}
+              meta={[p.kind, projectOrg(p), projectStatus(p)].filter((m): m is string => !!m)}
+              date={p.started && dateRange(p.started.slice(0, 4))}
+              summary={p.summary}
+              stack={p.stack}
+            />
+          ))}
+        </Section>
+      )
+    }
+
+    {
+      skills.length > 0 && (
+        <Section id="skills" title="Skills">
+          <dl class="grid gap-x-6 gap-y-2 text-[0.9375rem] sm:grid-cols-[11rem_1fr] print:grid-cols-[11rem_1fr]">
+            {skills.map((g) => (
+              <>
+                <dt class="text-muted-foreground">{g.group}</dt>
+                <dd class="mb-2 sm:mb-0">{g.items.join(', ')}</dd>
+              </>
+            ))}
+          </dl>
+        </Section>
+      )
+    }
+
+    {
+      schools.length > 0 && (
+        <Section id="education" title="Education">
+          {schools.map((e) => (
+            <Item
+              title={e.field}
+              subtitle={e.institution}
+              meta={[e.degree, e.location].filter(Boolean)}
+              date={dateRange(e.start, e.end)}
+            />
+          ))}
+        </Section>
+      )
+    }
+
+    {
+      certs.length > 0 && (
+        <Section id="certificates" title="Certificates">
+          {certs.map((c) => (
+            <Item title={c.name} titleHref={c.url} subtitle={c.provider} date={dateRange(c.issued)} />
+          ))}
+        </Section>
+      )
+    }
+
+    <footer class="border-t pt-6 text-sm text-muted-foreground print:hidden">
+      © {new Date().getFullYear()} {profile.name}
+    </footer>
+  </main>
+</Layout>

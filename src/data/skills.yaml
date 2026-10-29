@@ -1,4 +1,4 @@
-# Toolbox section. Groups show in this order.
+# Skills section. Groups show in this order.
 
 - group: Languages
   items: [Java, TypeScript, JavaScript, Python, Solidity, C#, C++]
@@ -17,4 +17,4 @@
 - group: DevOps
   items: [Docker, AWS]
 - group: AI/ML
-  items: [AI/ML, LLM engineering]
+  items: [LLM engineering, TensorFlow, RAG]

@@ -1,4 +1,4 @@
-# Education. Each entry appears in the Life column at its start date.
+# Education. Map: Life column at the start date. Résumé: newest first.
 #
 # Fields: id, institution, field, degree, location,
 #         start ('YYYY' or 'YYYY-MM'), end ('YYYY', 'YYYY-MM' or present)

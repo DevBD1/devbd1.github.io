@@ -2,22 +2,30 @@
 import '@/styles/global.css';
 import { profile, site } from '@/lib/content';
 
+interface Props {
+  title?: string;
+  /** 'paper' is the light, printable theme used by the résumé. */
+  theme?: 'dark' | 'paper';
+}
+
+const { title = site.title, theme = 'dark' } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site ?? site.url).href;
+const paper = theme === 'paper';
 ---
 
 <!doctype html>
-<html lang={site.lang}>
+<html lang={site.lang} class={paper ? 'theme-paper' : undefined}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="color-scheme" content="dark" />
-    <meta name="theme-color" content="#0b0d12" />
-    <title>{site.title}</title>
+    <meta name="color-scheme" content={paper ? 'light' : 'dark'} />
+    <meta name="theme-color" content={paper ? '#ffffff' : '#0b0d12'} />
+    <title>{title}</title>
     <meta name="description" content={site.description} />
     <meta name="author" content={profile.name} />
     <link rel="canonical" href={canonical} />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content={site.title} />
+    <meta property="og:title" content={title} />
     <meta property="og:description" content={site.description} />
     <meta property="og:url" content={canonical} />
     <meta name="twitter:card" content="summary" />
