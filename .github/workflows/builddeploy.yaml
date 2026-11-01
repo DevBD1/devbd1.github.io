@@ -63,3 +63,15 @@ jobs:
 
       - name: Deploy
         uses: actions/deploy-pages@v4
+
+  notify-profile:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify profile repo
+        run: >
+          curl -sS --fail -X POST
+          -H "Authorization: Bearer ${{ secrets.PROFILE_DISPATCH_TOKEN }}"
+          -H "Accept: application/vnd.github+json"
+          https://api.github.com/repos/DevBD1/DevBD1/dispatches
+          -d '{"event_type":"portfolio-updated"}'
