@@ -1,20 +1,18 @@
 # Skills section. Groups show in this order.
 
 - group: Languages
-  items: [Java, TypeScript, JavaScript, Python, Solidity, C#, C++]
+  items: [C++, C#, Java, Python, SQL]
 - group: Frontend
-  items: [React, Next.js, Astro, Tailwind CSS]
+  items: [React]
 - group: Backend
-  items: [Node.js, Express]
+  items: [Node.js, .NET]
 - group: Mobile
-  items: [React Native]
-- group: Game Development
-  items: [Unity, Unreal Engine]
+  items: [React Native, Expo]
 - group: IoT
   items: [ThingsBoard, Node-RED, Modbus]
 - group: Databases
   items: [PostgreSQL, Redis, SQLite]
 - group: DevOps
-  items: [Docker, AWS]
+  items: [Docker, GitHub Actions, CI/CD]
 - group: AI/ML
-  items: [LLM engineering, TensorFlow, RAG]
+  items: [LLM engineering, RAG, AI agent design]
